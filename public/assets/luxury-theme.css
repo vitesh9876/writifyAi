@@ -7,11 +7,12 @@
    4. Muted Text & Edge: #71717A (and rgba(9, 9, 11, 0.08) border)
 
    Strict Rules:
-   - ZERO 5th colors (no purples, blues, yellows, or gradients)
+   - ZERO 5th colors (no purples, blues, yellows, or gradients in UI chrome)
    - ZERO pill buttons (standard 8px rectangular radius)
    - ZERO fake reviews or fake metrics
    - ZERO emoji icons
    - ZERO em dashes
+   - Real functional ink swatches and canvas content preserve true color
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -92,33 +93,49 @@ p, span, div {
   color: var(--c-muted) !important;
 }
 
-.text-brand-600, .text-brand-700, .text-indigo-600, .text-emerald-600, .text-purple-600 {
+.text-brand-600, .text-brand-700, .text-indigo-600, .text-purple-600 {
   color: var(--c-ink) !important;
 }
 
 /* Header Navbar: Pure White with Hairline Border */
-header.sticky, header[class*="sticky"] {
+header.sticky, header[class*="sticky"], header {
   background-color: var(--c-surface) !important;
   background-image: none !important;
   border-bottom: 1px solid var(--c-border) !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
 }
 
-nav button, nav a {
-  color: var(--c-muted) !important;
+/* Navbar Links & Dropdowns: Clean Ghost Buttons */
+header nav button, header nav a,
+header button[class*="bg-transparent"], header button[class*="border-none"],
+header a[class*="bg-transparent"] {
+  background: transparent !important;
+  background-image: none !important;
+  color: #3f3f46 !important;
+  border: none !important;
+  box-shadow: none !important;
   border-radius: var(--radius-btn) !important;
+  padding: 6px 12px !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
   transition: all 0.15s ease !important;
 }
 
-nav button:hover, nav a:hover {
+header nav button:hover, header nav a:hover,
+header button[class*="bg-transparent"]:hover, header button[class*="border-none"]:hover {
   color: var(--c-ink) !important;
-  background-color: var(--c-bg) !important;
+  background-color: #f4f4f5 !important;
 }
 
-/* All Action Buttons: Pure #09090B with #FFFFFF Text (Strictly NO pills) */
-button, .btn,
-header a[href*="editor"], header button[class*="brand"],
-.bg-brand-600, .bg-brand-700, a[href*="editor"][class*="inline-flex"] {
+/* Primary Action Buttons: Pure #09090B with #FFFFFF Text */
+.btn-primary,
+button.bg-brand-600, a.bg-brand-600,
+button.bg-brand-700, a.bg-brand-700,
+button.bg-slate-900, a.bg-slate-900,
+header a[href*="editor"].bg-brand-600,
+header a[href*="editor"][class*="inline-flex"],
+button[class*="shadow-brand"],
+button[type="submit"] {
   background: var(--c-ink) !important;
   background-image: none !important;
   color: var(--c-surface) !important;
@@ -130,20 +147,17 @@ header a[href*="editor"], header button[class*="brand"],
   transition: opacity 0.15s ease !important;
 }
 
-button:hover, .btn:hover,
-header a[href*="editor"]:hover, header button[class*="brand"]:hover,
-.bg-brand-600:hover, .bg-brand-700:hover, a[href*="editor"][class*="inline-flex"]:hover {
+.btn-primary:hover,
+button.bg-brand-600:hover, a.bg-brand-600:hover,
+button.bg-slate-900:hover, a.bg-slate-900:hover {
   opacity: 0.9 !important;
   transform: none !important;
 }
 
-button:active, .btn:active {
-  transform: scale(0.98) !important;
-}
-
-/* Secondary Buttons */
+/* Secondary / Bordered Buttons */
 button.border-surface-200, button.border-surface-300,
-a.border-surface-200, a.border-surface-300 {
+a.border-surface-200, a.border-surface-300,
+button[class*="border-surface-"], a[class*="border-surface-"] {
   background: var(--c-surface) !important;
   border: 1px solid var(--c-border) !important;
   border-radius: var(--radius-btn) !important;
@@ -151,35 +165,142 @@ a.border-surface-200, a.border-surface-300 {
 }
 
 button.border-surface-200:hover, a.border-surface-200:hover {
-  background: var(--c-bg) !important;
+  background: #f4f4f5 !important;
   border-color: var(--c-muted) !important;
 }
 
-/* Cards & Containers: Pure #FFFFFF with Hairline Border */
-.bg-white, [class*="bg-surface-50"], [class*="bg-surface-100"] {
-  background-color: transparent;
+/* Ghost & Inline Text Buttons */
+button.bg-transparent, a.bg-transparent,
+button[class*="border-none"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
+/* INK COLOR PALETTE SWATCHES & BUTTONS (Must NOT be overridden to black!) */
+button:has(div[style*="background"]),
+button:has(div[style*="backgroundColor"]),
+button:has(div[style*="background-color"]) {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e7 !important;
+  border-radius: var(--radius-btn) !important;
+  color: var(--c-ink) !important;
+  padding: 6px 10px !important;
+  box-shadow: none !important;
+  min-height: 44px !important;
+}
+
+button:has(div[style*="background"]):hover {
+  border-color: #09090b !important;
+  background: #fafafa !important;
+}
+
+/* Preserve actual ink color inside color swatch circle */
+div[style*="background-color"], div[style*="backgroundColor"],
+span[style*="background-color"], span[style*="backgroundColor"] {
+  border-radius: 50% !important;
+}
+
+/* Plus / Minus Counter Buttons in Editor (- and +) */
+button:has(svg.lucide-minus), button:has(svg.lucide-plus),
+button:has(svg[class*="lucide-minus"]), button:has(svg[class*="lucide-plus"]) {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e7 !important;
+  color: #09090b !important;
+  border-radius: 6px !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+}
+
+button:has(svg.lucide-minus):hover, button:has(svg.lucide-plus):hover {
+  background: #f4f4f5 !important;
+}
+
+/* Pen Type Segmented Controls */
+div.grid.grid-cols-3.bg-surface-100 button {
+  background: transparent !important;
+  color: #71717a !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  padding: 6px 8px !important;
+}
+
+div.grid.grid-cols-3.bg-surface-100 button[class*="bg-white"] {
+  background: #ffffff !important;
+  color: #09090b !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+}
+
+/* Hide Pro / Crown Badges - 100% Free */
+span[class*="from-amber-"], span[class*="to-amber-"],
+svg.lucide-crown, [class*="fill-amber-"] {
+  display: none !important;
+}
+
+/* Badges: Clean Monochrome 4-Color Badges */
+span[class*="bg-purple-"], span[class*="bg-emerald-"], span[class*="bg-amber-"],
+span[class*="bg-blue-"], span[class*="bg-brand-50"], span[class*="bg-brand-100"] {
+  background: #f4f4f5 !important;
+  color: #18181b !important;
+  border: 1px solid #e4e4e7 !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 10px !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+/* Strictly NO Pill-Shaped Buttons */
+button.rounded-full, a.rounded-full {
+  border-radius: var(--radius-btn) !important;
+}
+
+/* Cards & Containers: Pure #FFFFFF with Hairline Border */
 .rounded-2xl.border, .rounded-xl.border, .rounded-3xl.border,
-div[class*="border border-surface-200"], div[class*="border border-surface-300"] {
+div[class*="border border-surface-200"], div[class*="border border-surface-300"],
+section[class*="bg-surface-"] div[class*="border"] {
   background-color: var(--c-surface) !important;
   border: 1px solid var(--c-border) !important;
   border-radius: var(--radius-card) !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
-  transition: border-color 0.15s ease !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
 }
 
-.rounded-2xl.border:hover, .rounded-xl.border:hover, .rounded-3xl.border:hover {
-  border-color: rgba(9, 9, 11, 0.25) !important;
-  transform: none !important;
-}
-
-/* Badges: #FFFFFF Surface with #71717A Border */
-.bg-brand-50, .bg-emerald-50, .bg-amber-50, .bg-purple-50 {
+/* WhatsApp Community Section: 4-Color Clean Architecture */
+#whatsapp-community, section:has(#whatsapp-community) {
   background-color: var(--c-surface) !important;
-  border: 1px solid var(--c-border) !important;
-  color: var(--c-ink) !important;
-  border-radius: 6px !important;
+  background-image: none !important;
+  border-bottom: 1px solid var(--c-border) !important;
+}
+
+#whatsapp-community [class*="bg-emerald-"],
+#whatsapp-community [class*="bg-teal-"] {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+#whatsapp-community a[href*="whatsapp"],
+#whatsapp-community a[href*="chat.whatsapp"] {
+  background-color: var(--c-ink) !important;
+  color: var(--c-surface) !important;
+  border-radius: var(--radius-btn) !important;
+  border: 1px solid var(--c-ink) !important;
+}
+
+/* Floating WhatsApp Button: Clean Structured 4-Color Button */
+a[href*="whatsapp"].fixed, a[href*="chat.whatsapp"].fixed,
+aside[aria-label="Join WhatsApp Community"] a {
+  background-color: var(--c-ink) !important;
+  color: var(--c-surface) !important;
+  border-radius: var(--radius-btn) !important;
+  border: 1px solid var(--c-ink) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
 }
 
 /* Form Controls & Inputs */
@@ -195,6 +316,14 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--c-ink) !important;
   box-shadow: 0 0 0 1px var(--c-ink) !important;
   outline: none !important;
+}
+
+/* Sliders */
+input[type="range"] {
+  accent-color: var(--c-ink) !important;
+  background: var(--c-border) !important;
+  height: 4px !important;
+  border-radius: 4px !important;
 }
 
 /* Studio Editor Workspace */
@@ -222,13 +351,6 @@ canvas {
   border-radius: 4px;
 }
 
-input[type="range"] {
-  accent-color: var(--c-ink) !important;
-  background: var(--c-border) !important;
-  height: 4px !important;
-  border-radius: 4px !important;
-}
-
 /* Footer: Pure #FFFFFF with #71717A Text */
 footer {
   background-color: var(--c-surface) !important;
@@ -236,6 +358,23 @@ footer {
   color: var(--c-muted) !important;
 }
 
+footer a, footer button,
+[class*="tracking-widest"][class*="uppercase"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--c-muted) !important;
+  font-size: 11px !important;
+  padding: 0 !important;
+}
+
+footer a:hover, footer button:hover,
+[class*="tracking-widest"][class*="uppercase"]:hover {
+  color: var(--c-ink) !important;
+  text-decoration: underline !important;
+}
+
+/* Mobile Bottom Navigation */
 nav.md\:hidden.fixed.bottom-0 {
   background-color: var(--c-surface) !important;
   border: 1px solid var(--c-border) !important;
