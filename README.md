@@ -1,17 +1,17 @@
-# Writify AI ✍️
+# Writify AI
 
 > **The Next-Generation Digital Text to Hyper-Realistic Handwriting AI Studio**  
 > Convert essays, assignments, code notes, and letters into authentic, human-like cursive handwriting on realistic ruled notebooks, textured stationery, and custom uploaded paper backgrounds. 100% Free & Open-Access.
 
 ---
 
-## ✨ Features at a Glance
+## Features at a Glance
 
 - **Hyper-Realistic Human Penmanship**: Natural cursive curves, baseline variations, and organic character-to-character slant variations.
 - **Perfect Ruled Notebook Snapping**: Automatic line row alignment on ruled notebook paper so handwriting sits directly on physical blue lines without drift or crossing.
 - **Academic Realism Suite**:
-  - ✒️ **Multi-Pen Heading & Colors**: Automatically formats section titles/headings in deep graphite black, questions & tricks in academic crimson red, and body text in classic royal ballpoint blue.
-  - 🎓 **Academic Student Header**: Auto-formats Name, Roll Number, Subject, and Submission Date directly inside the page header box.
+  - **Multi-Pen Heading & Colors**: Automatically formats section titles/headings in deep graphite black, questions & tricks in academic crimson red, and body text in classic royal ballpoint blue.
+  - **Academic Student Header**: Auto-formats Name, Roll Number, Subject, and Submission Date directly inside the page header box.
 - **Handwriting Fatigue Dynamics**: Mimics how human hands naturally write faster or slightly looser toward the bottom of long pages.
 - **Custom Font Synthesizer & Scanner**: Upload photos of your own handwritten alphabet samples to clone and generate your personal handwriting style in seconds.
 - **Multi-Page Export**: Download crisp, high-resolution PDFs or JPG images ready for digital homework submission or printing.
@@ -19,7 +19,7 @@
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Prerequisites
 - **Node.js**: v18.0.0 or higher
@@ -48,7 +48,7 @@ npm run start
 
 ---
 
-## 🌐 Recommended Optimal Deployment (100% Free & Fast)
+## Recommended Optimal Deployment (100% Free & Fast)
 
 ### Option 1: Vercel (Recommended — 2-minute instant deployment)
 Vercel is the creator of Next.js and provides the fastest, zero-config global edge hosting with free SSL and automatic CDN caching:
@@ -73,7 +73,7 @@ Vercel is the creator of Next.js and provides the fastest, zero-config global ed
 
 ---
 
-## 📁 Project Architecture
+## Project Architecture
 
 ```
 writify-ai/
@@ -92,10 +92,11 @@ writify-ai/
 
 ---
 
-## 📄 License & Community
+## License & Community
 
-Created with ❤️ by **Vitesh**.  
+Created with by **Vitesh**.  
 Connect:  
 - **Instagram**: [@vitesh_07_02](https://instagram.com/vitesh_07_02)  
 - **WhatsApp**: [+91 9494006022](https://wa.me/919494006022)  
 - **Email**: [viteshpallapothu07@gmail.com](mailto:viteshpallapothu07@gmail.com)
+

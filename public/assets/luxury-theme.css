@@ -1,0 +1,371 @@
+/* ==========================================================================
+   WRITIFY AI - WORLD-CLASS ULTRA-PREMIUM LUXURY DESIGN SYSTEM
+   Inspired by: Bencho (bencho.dev), BoardUI (boardui.com),
+   Transitions (transitions.dev), and Beautiful UI (beautifului.dev)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Core Luxury Color Tokens */
+  --lux-bg-root: #07080d;
+  --lux-bg-elevated: #0d0f17;
+  --lux-surface-card: rgba(16, 19, 30, 0.75);
+  --lux-surface-card-hover: rgba(22, 27, 44, 0.85);
+  --lux-surface-glass: rgba(18, 22, 34, 0.6);
+  --lux-hairline: rgba(255, 255, 255, 0.08);
+  --lux-hairline-hover: rgba(255, 255, 255, 0.16);
+  --lux-hairline-accent: rgba(99, 102, 241, 0.35);
+
+  /* Dynamic Accents */
+  --lux-indigo: #6366f1;
+  --lux-violet: #8b5cf6;
+  --lux-cyan: #06b6d4;
+  --lux-amber: #f59e0b;
+  --lux-emerald: #10b981;
+
+  /* Typography Colors */
+  --lux-text-primary: #f8fafc;
+  --lux-text-secondary: #94a3b8;
+  --lux-text-muted: #64748b;
+  --lux-text-inverse: #07080d;
+
+  /* Tailwind CSS Token Overrides */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-surface-50: #0a0c14;
+  --color-surface-100: #0f121d;
+  --color-surface-200: #161b2a;
+  --color-surface-300: #1e2438;
+  --color-surface-400: #475569;
+  --color-surface-500: #64748b;
+  --color-surface-600: #94a3b8;
+  --color-surface-700: #cbd5e1;
+  --color-surface-800: #e2e8f0;
+  --color-surface-900: #f8fafc;
+  --color-surface-950: #ffffff;
+
+  --color-brand-50: rgba(99, 102, 241, 0.08);
+  --color-brand-100: rgba(99, 102, 241, 0.15);
+  --color-brand-200: rgba(99, 102, 241, 0.25);
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f46e5;
+  --color-brand-700: #4338ca;
+  --color-brand-800: #3730a3;
+  --color-brand-900: #312e81;
+  --color-brand-950: #1e1b4b;
+
+  /* Transitions curve */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Base Document Styling */
+html, body {
+  background-color: var(--lux-bg-root) !important;
+  color: var(--lux-text-primary) !important;
+  font-family: var(--font-sans) !important;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* Ambient Radial Mesh */
+body {
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -15%, rgba(99, 102, 241, 0.14) 0%, transparent 70%),
+    radial-gradient(circle 500px at 90% 25%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(circle 600px at 10% 65%, rgba(6, 182, 212, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, #07080d 0%, #090a10 100%) !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Sophisticated Typography */
+h1, h2, h3, h4, .font-black, .font-extrabold {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.03em !important;
+}
+
+h1 {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 45%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+  color: #f8fafc !important;
+}
+
+/* Shimmer Accent Gradient Text */
+.text-brand-600, .text-brand-700, .text-indigo-600 {
+  color: #818cf8 !important;
+}
+
+.gradient-text-luxury {
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   NAVIGATION (Bencho / BoardUI Floating Island Bar)
+   ========================================================================== */
+header.sticky, header[class*="sticky"] {
+  background: rgba(9, 11, 18, 0.8) !important;
+  backdrop-filter: blur(24px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+  border-bottom: 1px solid var(--lux-hairline) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Navigation Links */
+nav button, nav a {
+  color: #94a3b8 !important;
+  transition: all 0.2s var(--ease-spring) !important;
+}
+
+nav button:hover, nav a:hover {
+  color: #f8fafc !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Luxury Start Writing Pill Button */
+header a[href*="editor"], header button[class*="brand"] {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  font-weight: 600 !important;
+  padding: 8px 18px !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 8px 20px -4px rgba(99, 102, 241, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  transition: all 0.25s var(--ease-spring) !important;
+}
+
+header a[href*="editor"]:hover, header button[class*="brand"]:hover {
+  transform: translateY(-1.5px) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 12px 28px -4px rgba(99, 102, 241, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+header a[href*="editor"]:active, header button[class*="brand"]:active {
+  transform: scale(0.97) !important;
+}
+
+/* ==========================================================================
+   SECTIONS & SURFACES (BoardUI High-End Architecture)
+   ========================================================================== */
+section {
+  background: transparent !important;
+  border-color: var(--lux-hairline) !important;
+}
+
+/* All Card Containers (Replacing plain white boxes with frosted glass) */
+.bg-white, [class*="bg-surface-50"], [class*="bg-surface-100"] {
+  background-color: transparent;
+}
+
+/* Elevate Content Cards */
+.rounded-2xl.border, .rounded-xl.border, .rounded-3xl.border,
+div[class*="border border-surface-200"], div[class*="border border-surface-300"] {
+  background: var(--lux-surface-card) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--lux-hairline) !important;
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.45) !important;
+  transition: all 0.3s var(--ease-spring) !important;
+}
+
+/* Interactive Card Hover (Transitions.dev) */
+.rounded-2xl.border:hover, .rounded-xl.border:hover, .rounded-3xl.border:hover {
+  border-color: var(--lux-hairline-accent) !important;
+  box-shadow: 0 20px 45px -12px rgba(99, 102, 241, 0.2), 0 0 0 1px rgba(99, 102, 241, 0.2) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Text Hierarchy in Cards */
+.text-surface-900, .text-gray-900, .text-slate-900, .text-surface-800 {
+  color: #f8fafc !important;
+}
+
+.text-surface-600, .text-surface-700, .text-gray-600, .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+.text-surface-500, .text-gray-500, .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Badges & Pills */
+.bg-brand-50, .bg-emerald-50, .bg-amber-50, .bg-purple-50 {
+  background: rgba(99, 102, 241, 0.12) !important;
+  border: 1px solid rgba(99, 102, 241, 0.25) !important;
+  color: #a5b4fc !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Glowing Indicator Dot */
+.glow-dot-emerald {
+  box-shadow: 0 0 12px #10b981;
+}
+
+.glow-dot-indigo {
+  box-shadow: 0 0 12px #6366f1;
+}
+
+/* ==========================================================================
+   BUTTONS (Beautiful UI + Bencho Tactile Feel)
+   ========================================================================== */
+button, .btn {
+  transition: all 0.2s var(--ease-spring) !important;
+}
+
+button:active {
+  transform: scale(0.97) !important;
+}
+
+/* Primary Action Buttons */
+.bg-brand-600, .bg-brand-700, a[href*="editor"][class*="inline-flex"] {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 10px 25px -5px rgba(99, 102, 241, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.bg-brand-600:hover, .bg-brand-700:hover, a[href*="editor"][class*="inline-flex"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 16px 32px -6px rgba(99, 102, 241, 0.7) !important;
+}
+
+/* Secondary / Glass Buttons */
+button.border-surface-200, button.border-surface-300,
+a.border-surface-200, a.border-surface-300 {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid var(--lux-hairline) !important;
+  color: #f1f5f9 !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+button.border-surface-200:hover, a.border-surface-200:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Form Controls & Inputs */
+input, textarea, select {
+  background-color: rgba(14, 17, 26, 0.8) !important;
+  border: 1px solid var(--lux-hairline) !important;
+  color: #f8fafc !important;
+  border-radius: 12px !important;
+  transition: all 0.2s var(--ease-spring) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--lux-indigo) !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25) !important;
+  outline: none !important;
+}
+
+/* ==========================================================================
+   STUDIO EDITOR (/editor) - LUXURY CREATIVE SUITE
+   ========================================================================== */
+/* Editor Master Container */
+.min-h-screen.flex.flex-col {
+  background: #08090f !important;
+}
+
+/* Editor Header Bar */
+header.min-h-\[48px\], header[class*="min-h-"] {
+  background: rgba(12, 15, 24, 0.85) !important;
+  backdrop-filter: blur(24px) !important;
+  border-bottom: 1px solid var(--lux-hairline) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Editor Left & Right Sidebars */
+aside, div[class*="lg:w-80"], div[class*="lg:w-72"] {
+  background: rgba(12, 15, 24, 0.9) !important;
+  backdrop-filter: blur(24px) !important;
+  border-color: var(--lux-hairline) !important;
+  color: #e2e8f0 !important;
+}
+
+/* Canvas Area */
+main {
+  background: radial-gradient(circle at 50% 50%, #0d101a 0%, #07080d 100%) !important;
+}
+
+/* The Paper Sheet in the Canvas (Preserve pristine paper realism) */
+canvas {
+  filter: drop-shadow(0 20px 45px rgba(0, 0, 0, 0.65)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+  border-radius: 4px;
+}
+
+/* Range Sliders (Bencho Style Micro-Sliders) */
+input[type="range"] {
+  accent-color: #6366f1 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  height: 6px !important;
+  border-radius: 9999px !important;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background: #6366f1 !important;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8) !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Toggle Switches (Bencho Tactile Switches) */
+button[role="switch"], [class*="peer-checked:bg-"] {
+  transition: all 0.25s var(--ease-spring) !important;
+}
+
+/* Dropdowns & Popovers */
+div[role="menu"], [class*="z-50"][class*="rounded-"] {
+  background: rgba(15, 18, 30, 0.95) !important;
+  backdrop-filter: blur(24px) !important;
+  border: 1px solid var(--lux-hairline) !important;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================================
+   FOOTER (Deep Obsidian Anchor)
+   ========================================================================== */
+footer {
+  background: #05060a !important;
+  border-top: 1px solid var(--lux-hairline) !important;
+}
+
+/* Mobile Bottom Navigation Capsule */
+nav.md\:hidden.fixed.bottom-0 {
+  background: rgba(12, 15, 24, 0.85) !important;
+  backdrop-filter: blur(24px) !important;
+  border: 1px solid var(--lux-hairline) !important;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07080d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2438;
+  border-radius: 9999px;
+  border: 2px solid #07080d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333d5e;
+}
