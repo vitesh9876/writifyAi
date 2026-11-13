@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Indie+Flower&family=Inter:wght@300;400;500;600;700&family=Kalam:wght@300;400;700&family=Marck+Script&family=Sacramento&family=Shadows+Into+Light&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f0a19;
+  --foreground: #f8fafc;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Notebook Ruled Line Simulation */
+.notebook-ruled-page {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(90deg, transparent 79px, #f43f5e 79px, #f43f5e 81px, transparent 81px),
+    linear-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 100% 100%, 100% 32px;
+  background-position: 0 0, 0 80px;
+}
+
+.notebook-natural-page {
+  background-color: #fdfaf2;
+  background-image: 
+    linear-gradient(90deg, transparent 84px, #e11d48 84px, #e11d48 86px, transparent 86px),
+    linear-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 100% 100%, 100% 32px;
+  background-position: 0 0, 0 80px;
+}
+
+.notebook-grid-page {
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(#f1f5f9 1px, transparent 1px),
+    linear-gradient(90deg, #f1f5f9 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.scroll-parchment-page {
+  background: radial-gradient(circle at 50% 50%, #fef8e7 0%, #faecd0 60%, #e2c89b 100%);
+  box-shadow: inset 0 0 40px rgba(133, 77, 14, 0.2), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Realistic organic text variance */
+.handwriting-text {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+

@@ -1,0 +1,131 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  passwordHash  String?
+  displayName   String?
+  role          String         @default("user")
+  planId        String         @default("free")
+  planName      String         @default("Free Plan")
+  planExpiresAt DateTime?
+  isPro         Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  assignments   Assignment[]
+  letters       Letter[]
+  scrollLetters ScrollLetter[]
+  canvasDesigns CanvasDesign[]
+  orders        Order[]
+}
+
+model Assignment {
+  id             String   @id @default(cuid())
+  userId         String?
+  title          String
+  fileName       String
+  content        String
+  contentPreview String?
+  pageCount      Int      @default(1)
+  wordCount      Int      @default(0)
+  charCount      Int      @default(0)
+  fontFamily     String   @default("cursive_real")
+  fontSize       Float    @default(20)
+  lineHeight     Float    @default(1.8)
+  letterSpacing  Float    @default(1)
+  wordSpacing    Float    @default(2)
+  inkColor       String   @default("#002f6c")
+  paperTemplate  String   @default("Classic White")
+  customPageUrl  String?
+  margins        String   @default("{\"top\":80,\"bottom\":80,\"left\":80,\"right\":80}")
+  scannerEffect  String   @default("none")
+  shadowEffect   String   @default("none")
+  exportFormat   String   @default("pdf")
+  pagesData      String?  // JSON stringified pages content
+  settings       String?  // JSON stringified settings
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user           User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Letter {
+  id           String   @id @default(cuid())
+  userId       String?
+  title        String
+  fileName     String
+  category     String   @default("Love & Romance")
+  templateId   String?
+  salutation   String   @default("Dearest,")
+  dateText     String?
+  body         String
+  closing      String   @default("With all my love,\nAlways yours")
+  fontFamily   String   @default("cursive_real")
+  inkColor     String   @default("#1e3a8a")
+  stationery   String   @default("vintage_rose")
+  stamp        String?
+  exportFormat String   @default("pdf")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user         User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model ScrollLetter {
+  id             String   @id @default(cuid())
+  userId         String?
+  title          String
+  fileName       String
+  body           String
+  fontFamily     String   @default("darlington")
+  inkColor       String   @default("#1a1a1a")
+  parchmentStyle String   @default("antique_scroll")
+  stamps         String?  // JSON array of stamps
+  ribbon         String?
+  waxSeal        String?  @default("royal_crest")
+  exportFormat   String   @default("pdf")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user           User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model CanvasDesign {
+  id           String   @id @default(cuid())
+  userId       String?
+  title        String
+  fileName     String
+  canvasState  String   // JSON stringified canvas elements
+  thumbnail    String?
+  exportFormat String   @default("png")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  user         User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Order {
+  id               String   @id @default(cuid())
+  userId           String?
+  planId           String
+  planName         String
+  amount           Float
+  currency         String   @default("INR")
+  gateway          String   @default("razorpay")
+  gatewayOrderId   String?
+  gatewayPaymentId String?
+  status           String   @default("paid")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  user             User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
