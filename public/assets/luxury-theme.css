@@ -1,72 +1,48 @@
 /* ==========================================================================
-   WRITIFY AI - WORLD-CLASS ULTRA-PREMIUM LIGHT LUXURY DESIGN SYSTEM
-   Inspired by: Bencho (bencho.dev), BoardUI (boardui.com),
-   Transitions (transitions.dev), and Beautiful UI (beautifului.dev)
+   WRITIFY AI - PROFESSIONAL, CLEAN LIGHT DESIGN SYSTEM
+   Strict Quality Rules:
+   - ZERO purple gradients
+   - ZERO pill-shaped buttons (standard 8px / 6px border-radius)
+   - ZERO fake reviews / fake metrics
+   - ZERO emoji icons
+   - ZERO em dashes
+   - ZERO crazy scroll or cursor animations
+   - Crisp, high-contrast, timeless architecture (Stripe / Linear / Apple style)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Core Light Luxury Palette Tokens */
+  /* Core Clean Architectural Tokens */
   --lux-bg-root: #f8fafc;
   --lux-bg-elevated: #ffffff;
   --lux-surface-card: #ffffff;
-  --lux-surface-card-hover: #ffffff;
-  --lux-surface-glass: rgba(255, 255, 255, 0.85);
-  --lux-hairline: rgba(0, 0, 0, 0.07);
-  --lux-hairline-hover: rgba(99, 102, 241, 0.25);
-  --lux-hairline-accent: rgba(99, 102, 241, 0.35);
+  --lux-hairline: rgba(0, 0, 0, 0.08);
+  --lux-hairline-hover: rgba(0, 0, 0, 0.16);
 
-  /* Royal Ink & Accent Colors */
-  --lux-indigo-primary: #4f46e5;
-  --lux-indigo-light: #6366f1;
-  --lux-violet: #7c3aed;
-  --lux-cyan: #0284c7;
-  --lux-emerald: #059669;
-  --lux-amber: #d97706;
+  /* Solid Professional Accents (Zero Purple) */
+  --lux-primary: #09090b;
+  --lux-primary-hover: #18181b;
+  --lux-accent-blue: #2563eb;
+  --lux-accent-emerald: #059669;
 
-  /* Deep Ink Typography */
-  --lux-text-primary: #0f172a;
-  --lux-text-secondary: #475569;
-  --lux-text-muted: #64748b;
-  --lux-text-faint: #94a3b8;
+  /* High-Contrast Typography */
+  --lux-text-primary: #09090b;
+  --lux-text-secondary: #3f3f46;
+  --lux-text-muted: #71717a;
 
   /* Typography Scales */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Tailwind CSS Token Overrides (Light Luxury Mode) */
-  --color-surface-50: #f8fafc;
-  --color-surface-100: #f1f5f9;
-  --color-surface-200: #e2e8f0;
-  --color-surface-300: #cbd5e1;
-  --color-surface-400: #94a3b8;
-  --color-surface-500: #64748b;
-  --color-surface-600: #475569;
-  --color-surface-700: #334155;
-  --color-surface-800: #1e293b;
-  --color-surface-900: #0f172a;
-  --color-surface-950: #020617;
-
-  --color-brand-50: #eef2ff;
-  --color-brand-100: #e0e7ff;
-  --color-brand-200: #c7d2fe;
-  --color-brand-300: #a5b4fc;
-  --color-brand-400: #818cf8;
-  --color-brand-500: #6366f1;
-  --color-brand-600: #4f46e5;
-  --color-brand-700: #4338ca;
-  --color-brand-800: #3730a3;
-  --color-brand-900: #312e81;
-  --color-brand-950: #1e1b4b;
-
-  /* Transitions Curves */
-  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Standard Structured Radius (Strictly NO pills) */
+  --radius-btn: 8px;
+  --radius-card: 12px;
+  --radius-input: 8px;
 }
 
-/* Base Light Document Styling */
+/* Base Document Styling */
 html, body {
   background-color: var(--lux-bg-root) !important;
   color: var(--lux-text-primary) !important;
@@ -74,284 +50,183 @@ html, body {
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
 
-/* Ambient Radial Mesh in Light Luxury */
+/* Clean Neutral Background (Zero Purple Gradients) */
 body {
-  background-image: 
-    radial-gradient(ellipse 90% 50% at 50% -10%, rgba(99, 102, 241, 0.07) 0%, transparent 60%),
-    radial-gradient(circle 600px at 95% 30%, rgba(124, 58, 237, 0.04) 0%, transparent 50%),
-    radial-gradient(circle 600px at 5% 70%, rgba(2, 132, 199, 0.04) 0%, transparent 50%),
-    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-image: none !important;
+  background-color: #f8fafc !important;
 }
 
-/* Sophisticated Typography in Light Mode */
+/* Sophisticated Typography */
 h1, h2, h3, h4, .font-black, .font-extrabold {
   font-family: var(--font-heading) !important;
-  letter-spacing: -0.03em !important;
-  color: var(--lux-text-primary) !important;
+  letter-spacing: -0.025em !important;
+  color: #09090b !important;
 }
 
 h1 {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #09090b !important;
+  color: #09090b !important;
 }
 
-/* Shimmer Accent Gradient Text */
-.text-brand-600, .text-brand-700, .text-indigo-600 {
-  color: #4f46e5 !important;
-}
-
-.gradient-text-luxury {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0284c7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* ==========================================================================
-   NAVIGATION (Bencho / BoardUI Floating Glass Island - Light Mode)
-   ========================================================================== */
+/* Structured Navigation Bar (Crisp White Glass) */
 header.sticky, header[class*="sticky"] {
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(24px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid var(--lux-hairline) !important;
-  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
 }
 
-/* Navigation Links */
 nav button, nav a {
   color: var(--lux-text-secondary) !important;
-  transition: all 0.2s var(--ease-spring) !important;
+  border-radius: var(--radius-btn) !important;
+  transition: all 0.15s ease !important;
 }
 
 nav button:hover, nav a:hover {
-  color: var(--lux-text-primary) !important;
+  color: #09090b !important;
   background: rgba(0, 0, 0, 0.04) !important;
 }
 
-/* Luxury Start Writing Pill Button */
-header a[href*="editor"], header button[class*="brand"] {
-  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
+/* Structured Rectangular CTA Button (NO Pill, NO Purple) */
+header a[href*="editor"], header button[class*="brand"],
+.bg-brand-600, .bg-brand-700, a[href*="editor"][class*="inline-flex"] {
+  background: #09090b !important;
   color: #ffffff !important;
-  border-radius: 9999px !important;
+  border-radius: var(--radius-btn) !important;
   font-weight: 600 !important;
-  padding: 8px 20px !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 20px -4px rgba(79, 70, 229, 0.35) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  transition: all 0.25s var(--ease-spring) !important;
+  padding: 8px 18px !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.15s ease !important;
 }
 
-header a[href*="editor"]:hover, header button[class*="brand"]:hover {
-  transform: translateY(-1.5px) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 12px 28px -4px rgba(79, 70, 229, 0.5) !important;
+header a[href*="editor"]:hover, header button[class*="brand"]:hover,
+.bg-brand-600:hover, .bg-brand-700:hover, a[href*="editor"][class*="inline-flex"]:hover {
+  background: #18181b !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+  transform: none !important;
 }
 
 header a[href*="editor"]:active, header button[class*="brand"]:active {
-  transform: scale(0.97) !important;
+  transform: scale(0.98) !important;
 }
 
-/* ==========================================================================
-   SECTIONS & SURFACES (Light Luxury Architecture)
-   ========================================================================== */
-section {
-  background: transparent !important;
-  border-color: var(--lux-hairline) !important;
-}
-
-/* All Card Containers (Pure White Floating Luxury Cards) */
-.bg-white, [class*="bg-surface-50"], [class*="bg-surface-100"] {
-  background-color: transparent;
-}
-
-/* Elevate Content Cards with Multi-Layered Shadows (Transitions.dev) */
+/* Neutral Clean Cards */
 .rounded-2xl.border, .rounded-xl.border, .rounded-3xl.border,
 div[class*="border border-surface-200"], div[class*="border border-surface-300"] {
   background: #ffffff !important;
   border: 1px solid var(--lux-hairline) !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 6px 20px -2px rgba(0, 0, 0, 0.04), 0 12px 32px -4px rgba(99, 102, 241, 0.03) !important;
-  transition: all 0.3s var(--ease-spring) !important;
+  border-radius: var(--radius-card) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+  transition: border-color 0.15s ease !important;
 }
 
-/* Interactive Card Hover */
 .rounded-2xl.border:hover, .rounded-xl.border:hover, .rounded-3xl.border:hover {
-  border-color: var(--lux-hairline-accent) !important;
-  box-shadow: 0 20px 40px -8px rgba(99, 102, 241, 0.12), 0 0 0 1px rgba(99, 102, 241, 0.15) !important;
-  transform: translateY(-2.5px) !important;
+  border-color: var(--lux-hairline-hover) !important;
+  transform: none !important;
 }
 
-/* Text Hierarchy in Cards */
+/* Text Hierarchy */
 .text-surface-900, .text-gray-900, .text-slate-900, .text-surface-800 {
-  color: #0f172a !important;
+  color: #09090b !important;
 }
 
 .text-surface-600, .text-surface-700, .text-gray-600, .text-slate-600 {
-  color: #475569 !important;
+  color: #3f3f46 !important;
 }
 
 .text-surface-500, .text-gray-500, .text-slate-500 {
-  color: #64748b !important;
+  color: #71717a !important;
 }
 
-/* Badges & Pills in Light Mode */
+/* Clean Badges (NO Purple) */
 .bg-brand-50, .bg-emerald-50, .bg-amber-50, .bg-purple-50 {
-  background: rgba(99, 102, 241, 0.08) !important;
-  border: 1px solid rgba(99, 102, 241, 0.18) !important;
-  color: #4f46e5 !important;
+  background: #f4f4f5 !important;
+  border: 1px solid #e4e4e7 !important;
+  color: #18181b !important;
+  border-radius: 6px !important;
 }
 
-/* ==========================================================================
-   BUTTONS (Beautiful UI + Bencho Tactile Feel)
-   ========================================================================== */
-button, .btn {
-  transition: all 0.2s var(--ease-spring) !important;
-}
-
-button:active {
-  transform: scale(0.97) !important;
-}
-
-/* Primary Action Buttons */
-.bg-brand-600, .bg-brand-700, a[href*="editor"][class*="inline-flex"] {
-  background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%) !important;
-  color: #ffffff !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 25px -5px rgba(79, 70, 229, 0.35) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-.bg-brand-600:hover, .bg-brand-700:hover, a[href*="editor"][class*="inline-flex"]:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 16px 32px -6px rgba(79, 70, 229, 0.45) !important;
-}
-
-/* Secondary / Glass Buttons in Light Mode */
+/* Clean Secondary Buttons */
 button.border-surface-200, button.border-surface-300,
 a.border-surface-200, a.border-surface-300 {
   background: #ffffff !important;
   border: 1px solid var(--lux-hairline) !important;
-  color: #1e293b !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  border-radius: var(--radius-btn) !important;
+  color: #18181b !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
 }
 
 button.border-surface-200:hover, a.border-surface-200:hover {
-  background: #f8fafc !important;
-  border-color: rgba(99, 102, 241, 0.3) !important;
+  background: #f4f4f5 !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Form Controls & Inputs */
 input, textarea, select {
   background-color: #ffffff !important;
   border: 1px solid var(--lux-hairline) !important;
-  color: #0f172a !important;
-  border-radius: 12px !important;
+  color: #09090b !important;
+  border-radius: var(--radius-input) !important;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) inset !important;
-  transition: all 0.2s var(--ease-spring) !important;
+  transition: border-color 0.15s ease !important;
 }
 
 input:focus, textarea:focus, select:focus {
-  border-color: var(--lux-indigo-primary) !important;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2) !important;
+  border-color: #09090b !important;
+  box-shadow: 0 0 0 1px #09090b !important;
   outline: none !important;
 }
 
-/* ==========================================================================
-   STUDIO EDITOR (/editor) - LIGHT LUXURY CREATIVE SUITE
-   ========================================================================== */
-/* Editor Master Container */
+/* Studio Editor Workspace */
 .min-h-screen.flex.flex-col {
-  background: #f1f5f9 !important;
+  background: #f4f4f5 !important;
 }
 
-/* Editor Header Bar */
 header.min-h-\[48px\], header[class*="min-h-"] {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(24px) !important;
+  background: #ffffff !important;
   border-bottom: 1px solid var(--lux-hairline) !important;
-  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
 }
 
-/* Editor Left & Right Sidebars */
 aside, div[class*="lg:w-80"], div[class*="lg:w-72"] {
   background: #ffffff !important;
   border-color: var(--lux-hairline) !important;
-  color: #1e293b !important;
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.02);
+  color: #18181b !important;
 }
 
-/* Canvas Area */
 main {
-  background: radial-gradient(circle at 50% 50%, #f8fafc 0%, #eef2f6 100%) !important;
+  background: #f4f4f5 !important;
 }
 
-/* The Paper Sheet in the Canvas (Realistic Paper Depth) */
 canvas {
-  filter: drop-shadow(0 16px 40px rgba(0, 0, 0, 0.12)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.08)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.04));
   border-radius: 4px;
 }
 
-/* Range Sliders (Bencho Style Micro-Sliders) */
+/* Clean Neutral Sliders */
 input[type="range"] {
-  accent-color: #4f46e5 !important;
-  background: #e2e8f0 !important;
-  height: 6px !important;
-  border-radius: 9999px !important;
+  accent-color: #09090b !important;
+  background: #e4e4e7 !important;
+  height: 4px !important;
+  border-radius: 4px !important;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-  background: #4f46e5 !important;
-  box-shadow: 0 0 10px rgba(79, 70, 229, 0.5) !important;
-  border: 2px solid #ffffff !important;
-}
-
-/* Toggle Switches */
-button[role="switch"], [class*="peer-checked:bg-"] {
-  transition: all 0.25s var(--ease-spring) !important;
-}
-
-/* Dropdowns & Popovers */
-div[role="menu"], [class*="z-50"][class*="rounded-"] {
-  background: #ffffff !important;
-  border: 1px solid var(--lux-hairline) !important;
-  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.12) !important;
-}
-
-/* ==========================================================================
-   FOOTER (Porcelain Anchor in Light Luxury)
-   ========================================================================== */
+/* Clean Neutral Footer */
 footer {
-  background: #f8fafc !important;
+  background: #ffffff !important;
   border-top: 1px solid var(--lux-hairline) !important;
   color: var(--lux-text-secondary) !important;
 }
 
-/* Mobile Bottom Navigation Capsule */
 nav.md\:hidden.fixed.bottom-0 {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(24px) !important;
+  background: #ffffff !important;
   border: 1px solid var(--lux-hairline) !important;
-  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.06) !important;
-}
-
-/* Custom Scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 9999px;
-  border: 2px solid #f1f5f9;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  border-radius: 12px !important;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04) !important;
 }

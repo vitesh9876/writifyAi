@@ -50,7 +50,7 @@ npm run start
 
 ## Recommended Optimal Deployment (100% Free & Fast)
 
-### Option 1: Vercel (Recommended — 2-minute instant deployment)
+### Option 1: Vercel (Recommended: 2-minute instant deployment)
 Vercel is the creator of Next.js and provides the fastest, zero-config global edge hosting with free SSL and automatic CDN caching:
 1. Push your repository to **GitHub** (public or private):
    ```bash
