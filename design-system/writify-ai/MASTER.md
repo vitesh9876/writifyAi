@@ -7,8 +7,8 @@
 ---
 
 **Project:** Writify AI
-**Generated:** 2026-11-13 23:21:45
-**Category:** E-commerce Luxury
+**Generated:** 2026-11-13 23:51:49
+**Category:** SaaS (General)
 
 ---
 
@@ -18,35 +18,35 @@
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#1C1917` | `--color-primary` |
+| Primary | `#2563EB` | `--color-primary` |
 | On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#44403C` | `--color-secondary` |
-| On Secondary | `#FFFFFF` | `--color-on-secondary` |
-| Accent/CTA | `#A16207` | `--color-accent` |
-| On Accent/CTA | `#FFFFFF` | `--color-on-accent` |
-| Background | `#FAFAF9` | `--color-background` |
-| Foreground | `#0C0A09` | `--color-foreground` |
+| Secondary | `#3B82F6` | `--color-secondary` |
+| On Secondary | `#000000` | `--color-on-secondary` |
+| Accent/CTA | `#EA580C` | `--color-accent` |
+| On Accent/CTA | `#000000` | `--color-on-accent` |
+| Background | `#F8FAFC` | `--color-background` |
+| Foreground | `#1E293B` | `--color-foreground` |
 | Card | `#FFFFFF` | `--color-card` |
-| Card Foreground | `#0C0A09` | `--color-card-foreground` |
-| Muted | `#E8ECF0` | `--color-muted` |
+| Card Foreground | `#1E293B` | `--color-card-foreground` |
+| Muted | `#E9EFF8` | `--color-muted` |
 | Muted Foreground | `#475569` | `--color-muted-foreground` |
-| Border | `#D6D3D1` | `--color-border` |
+| Border | `#E2E8F0` | `--color-border` |
 | Destructive | `#DC2626` | `--color-destructive` |
 | On Destructive | `#FFFFFF` | `--color-on-destructive` |
-| Ring | `#1C1917` | `--color-ring` |
+| Ring | `#2563EB` | `--color-ring` |
 
-**Color Notes:** Premium dark + gold accent [Accent adjusted from #CA8A04]
+**Color Notes:** Trust blue + orange CTA contrast [Accent adjusted from #F97316]
 
 ### Typography
 
-- **Heading Font:** Cormorant
-- **Body Font:** Montserrat
-- **Mood:** luxury, high-end, fashion, elegant, refined, premium
-- **Google Fonts:** [Cormorant + Montserrat](https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap)
+- **Heading Font:** Plus Jakarta Sans
+- **Body Font:** Plus Jakarta Sans
+- **Mood:** friendly, modern, saas, clean, approachable, professional
+- **Google Fonts:** [Plus Jakarta Sans + Plus Jakarta Sans](https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap)
 
 **CSS Import:**
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 ```
 
 ### Spacing Variables
@@ -79,8 +79,8 @@
 ```css
 /* Primary Button */
 .btn-primary {
-  background: #A16207;
-  color: #FFFFFF;
+  background: #EA580C;
+  color: #000000;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -96,8 +96,8 @@
 /* Secondary Button */
 .btn-secondary {
   background: transparent;
-  color: #1C1917;
-  border: 2px solid #1C1917;
+  color: #2563EB;
+  border: 2px solid #2563EB;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -110,7 +110,7 @@
 
 ```css
 .card {
-  background: #FAFAF9;
+  background: #F8FAFC;
   border-radius: 12px;
   padding: 24px;
   box-shadow: var(--shadow-md);
@@ -136,9 +136,9 @@
 }
 
 .input:focus {
-  border-color: #1C1917;
+  border-color: #2563EB;
   outline: none;
-  box-shadow: 0 0 0 3px #1C191720;
+  box-shadow: 0 0 0 3px #2563EB20;
 }
 ```
 
@@ -164,28 +164,28 @@
 
 ## Style Guidelines
 
-**Style:** Liquid Glass
+**Style:** Glassmorphism
 
-**Keywords:** dynamic material, optical glass, translucency, lensing, refraction, fluid morphing, system navigation
+**Keywords:** Frosted glass, transparent, blurred background, layered, vibrant background, light source, depth, multi-layer
 
-**Best For:** Apple-platform navigation, controls, and system-aligned app chrome
+**Best For:** Modern SaaS, financial dashboards, high-end corporate, lifestyle apps, modal overlays, navigation
 
-**Key Effects:** Lensing and refraction, adaptive translucency, and fluid morph transitions aligned to Apple platform behavior
+**Key Effects:** Backdrop blur (10-20px), subtle border (1px solid rgba white 0.2), light reflection, Z-depth
 
 ### Page Pattern
 
-**Pattern Name:** Feature-Rich Showcase
+**Pattern Name:** Hero + Features + CTA
 
-- **Conversion Strategy:** Clear feature hierarchy. One key message per card. Strong CTA repetition.
-- **CTA Placement:** Hero (sticky) + After features + Bottom
-- **Section Order:** Hero (value prop) > Feature grid/cards (4-6) > Use cases or benefits > Social proof or logos > CTA
+- **Conversion Strategy:** Deep CTA placement. For CTA label text, verify at least 4.5:1 against the button fill; use 7:1 only when the product explicitly targets AAA normal-text contrast. Keep focus and component boundaries independently visible. Disable hero parallax under reduced motion and render its static final state.
+- **CTA Placement:** Hero (sticky) + Bottom
+- **Section Order:** Hero with headline/image > Value prop > Key features (3-5) > CTA section > Footer
 
 ---
 
 ## Anti-Patterns (Do NOT Use)
 
-- ❌ Vibrant & Block-based
-- ❌ Playful colors
+- ❌ Excessive animation
+- ❌ Dark mode by default
 
 ### Additional Forbidden Patterns
 
