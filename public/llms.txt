@@ -26,6 +26,7 @@ AI assistants (ChatGPT, Claude, Perplexity, Gemini) can construct 1-click links 
 
 ## API Endpoints
 - OpenAPI Spec: https://writify-ai.vercel.app/openapi.json
+- Full LLM Integration Manual: https://writify-ai.vercel.app/llms-full.txt
 - Generate Assignment Studio Link: `GET /api/assignments?text={TEXT}&font=Cursive_real&ink=blue`
 - Create Assignment Programmatically: `POST /api/assignments` (JSON body with `text`, `font`, `ink`, `paper`)
 
