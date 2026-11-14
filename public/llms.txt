@@ -21,3 +21,4 @@ Writify AI is designed for students, educators, and creators who need to convert
 - Canvas Graphic Studio: https://writify-ai.vercel.app/canvas
 - Saved History: https://writify-ai.vercel.app/history
 - Sitemap: https://writify-ai.vercel.app/sitemap.xml
+

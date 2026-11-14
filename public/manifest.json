@@ -1,0 +1,55 @@
+{
+  "name": "Writify AI - Realistic Handwritten Assignment Generator",
+  "short_name": "Writify AI",
+  "description": "Convert typed digital text, notes, and essays into authentic human handwriting on lined notebook paper with 300 DPI PDF exports.",
+  "start_url": "/editor",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#09090b",
+  "icons": [
+    {
+      "src": "/logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "productivity",
+    "utilities"
+  ],
+  "shortcuts": [
+    {
+      "name": "Handwritten Assignment Studio",
+      "short_name": "Assignments",
+      "description": "Write essays and homework onto lined notebook paper",
+      "url": "/editor",
+      "icons": [
+        {
+          "src": "/logo_192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Stationery & Letters",
+      "short_name": "Letters",
+      "description": "Parchment letters, wax seals & stationery",
+      "url": "/letters",
+      "icons": [
+        {
+          "src": "/logo_192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
