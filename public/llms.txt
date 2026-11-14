@@ -1,0 +1,23 @@
+# Writify AI
+
+> Free online handwritten assignment generator. Transforms digital text, homework, essays, and lab reports into realistic human penmanship on ruled notebook paper with instant 300 DPI multi-page PDF exports.
+
+## Overview
+Writify AI is designed for students, educators, and creators who need to convert digital typed text into natural, human-like handwritten notebook pages. It combines vector glyph rendering with organic micro-variations, baseline wobble, ink bleed physics, and calibrated ruled line snapping.
+
+## Core Capabilities
+- **Text to Handwritten Assignments**: Converts typed notes into authentic royal blue or midnight black ink penmanship on ruled school notebook paper.
+- **Academic Auto-Mistake Engine**: Simulates genuine student homework with believable struck-out words, wavy lines, and organic pen scratch-outs.
+- **Document Ingestion**: 1-click text extraction from PDF, Word (.docx), and plain text (.txt) files directly into the editor canvas.
+- **120+ Human Handwriting Styles**: Diverse cursive, script, student print, and calligraphic styles across Latin, Devanagari (Hindi), Arabic, Cyrillic, and Greek.
+- **Custom Handwriting Clone**: Upload your personal .ttf or .otf handwriting font in one click to replicate your real handwriting.
+- **High-Resolution Exports**: Download 300 DPI vector PDFs formatted for A4 and US Letter sizes with zero watermarks.
+- **100% Free Forever**: Full features accessible without subscription fees, forced accounts, or watermarks.
+
+## Key URLs
+- Homepage: https://writify-ai.vercel.app/
+- Assignment Editor Studio: https://writify-ai.vercel.app/editor
+- Stationery & Letters Studio: https://writify-ai.vercel.app/letters
+- Canvas Graphic Studio: https://writify-ai.vercel.app/canvas
+- Saved History: https://writify-ai.vercel.app/history
+- Sitemap: https://writify-ai.vercel.app/sitemap.xml

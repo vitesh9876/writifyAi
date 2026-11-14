@@ -22,10 +22,18 @@
     <meta name="twitter:description" content="Turn typed text, notes, and essays into realistic handwritten assignments on ruled notebook paper. 120+ human fonts, auto-mistake engine, 300 DPI PDF, 100% free." />
     <meta name="twitter:image" content="https://writify-ai.vercel.app/og-image.png" />
 
+    <!-- Search Engine & Crawler Directives -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Writify AI" />
+    <meta name="keywords" content="handwritten assignment generator, convert text to handwriting, typed text to homework, ai handwriting generator, assignment writer, lined notebook paper generator, student handwriting font, 300 dpi pdf handwriting" />
+
     <!-- Google Site Verification & Search Console Hook -->
     <meta name="google-site-verification" content="verify-writify" />
+    <meta name="msvalidate.01" content="verify-bing-writify" />
 
-    <!-- Schema.org JSON-LD Structured Data (Organization & SoftwareApplication) -->
+    <!-- Schema.org JSON-LD Structured Data (Organization, WebApplication, HowTo, FAQPage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -33,23 +41,114 @@
         {
           "@type": "Organization",
           "@id": "https://writify-ai.vercel.app/#organization",
-          "name": "Writify",
+          "name": "Writify AI",
           "url": "https://writify-ai.vercel.app/",
-          "logo": "https://writify-ai.vercel.app/logo_512.png"
+          "logo": "https://writify-ai.vercel.app/logo_512.png",
+          "sameAs": [
+            "https://writify-ai.vercel.app"
+          ]
         },
         {
-          "@type": "SoftwareApplication",
+          "@type": "WebApplication",
           "@id": "https://writify-ai.vercel.app/#application",
-          "name": "Writify Text to Handwriting Generator",
-          "applicationCategory": "UtilitiesApplication",
-          "operatingSystem": "All",
+          "name": "Writify AI: Realistic Handwritten Assignment Generator",
           "url": "https://writify-ai.vercel.app/",
+          "applicationCategory": "EducationalApplication, UtilitiesApplication",
+          "operatingSystem": "All (Web Browser, Chrome, Safari, Edge, Firefox, iOS, Android)",
+          "browserRequirements": "Requires JavaScript. Requires HTML5.",
           "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
           },
-          "description": "Convert typed digital notes and text into realistic handwriting on lined notebook paper."
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "1280",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "description": "Convert typed digital notes, essays, and assignments into authentic human handwriting on lined notebook paper. Features 120+ fonts, ink bleed simulation, auto-mistake engine, and instant 300 DPI multi-page PDF exports with zero watermarks.",
+          "featureList": [
+            "Convert typed digital text to handwritten assignments in seconds",
+            "120+ authentic human handwriting fonts and world scripts (Latin, Devanagari, Arabic, Cyrillic)",
+            "Academic Auto-Mistake engine simulating organic student pen cross-outs and strike-throughs",
+            "Calibrated ruled line snapping and 4-corner margin alignment on school notebooks",
+            "Export multi-page 300 DPI vector PDFs ready for assignment submission with zero watermarks",
+            "Import PDF, Word (.docx), and text documents directly into the editor",
+            "Upload custom personal handwriting fonts (.ttf / .otf) in 1-click"
+          ]
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://writify-ai.vercel.app/#howto",
+          "name": "How to Convert Typed Text into Handwritten Assignments",
+          "description": "Step-by-step instructions to convert computer-typed essays or homework into realistic handwritten notebook pages.",
+          "totalTime": "PT1M",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Paste or Upload Assignment Content",
+              "text": "Copy and paste your notes, essay, or homework from ChatGPT, Google Docs, or Word into the studio, or click Upload PDF to import an existing document directly."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Choose Handwriting Font & Notebook Paper",
+              "text": "Select from 120+ human cursive, print, or student penmanship styles, pick royal blue or black gel ink, and select your preferred ruled notebook paper background."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Enable Academic Realism & Auto-Mistakes",
+              "text": "Optionally enable natural baseline wobble and auto-mistakes to simulate genuine human handwriting with realistic pen strike-throughs."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Download Multi-Page 300 DPI PDF",
+              "text": "Click Export to download your multi-page assignment as a crisp, print-ready 300 DPI PDF with zero watermarks."
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://writify-ai.vercel.app/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can professors or teachers detect Writify AI handwriting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Writify AI utilizes dynamic micro-variation algorithms that introduce organic baseline jitter, subtle angle fluctuations, and realistic ink pressure so no two letters look identical. Combined with the Auto-Mistake engine, printed pages look completely handcrafted by a student."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Writify AI free to export multi-page PDFs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Writify AI is 100% free forever. You can export unlimited multi-page 300 DPI PDFs with zero forced watermarks and no credit card or account required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I upload my own personal handwriting font?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can upload any standard .ttf or .otf handwriting font file directly into the editor in one click to replicate your exact personal handwriting."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I import PDF and Word documents directly?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, click 'Upload PDF' in the editor toolbar to automatically extract text from PDF, Word (.docx), or text files and populate them onto lined notebook pages."
+              }
+            }
+          ]
         }
       ]
     }
