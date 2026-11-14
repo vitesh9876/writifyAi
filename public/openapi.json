@@ -1,0 +1,184 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Writify AI API",
+    "description": "API for converting typed digital text, essays, and notes into realistic handwritten assignments on ruled notebook paper with 300 DPI vector PDF exports.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://writify-ai.vercel.app",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/assignments": {
+      "get": {
+        "summary": "Generate Studio Direct Link for Handwritten Assignment",
+        "description": "Converts input text, font choice, ink color, and notebook template into a 1-click interactive studio URL and document metadata.",
+        "operationId": "generateHandwrittenAssignmentLink",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "required": true,
+            "description": "The assignment text or prompt to be converted into realistic handwriting.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "font",
+            "in": "query",
+            "required": false,
+            "description": "Handwriting font family (e.g. Cursive_real, Halimun, Darlington, QEKevinKnowles, Tomatoes). Defaults to Cursive_real.",
+            "schema": {
+              "type": "string",
+              "default": "Cursive_real"
+            }
+          },
+          {
+            "name": "ink",
+            "in": "query",
+            "required": false,
+            "description": "Ink color: blue, black, red, green, or hex code (#002060). Defaults to blue.",
+            "schema": {
+              "type": "string",
+              "default": "blue"
+            }
+          },
+          {
+            "name": "paper",
+            "in": "query",
+            "required": false,
+            "description": "Notebook paper template: classic1, classic2 (ruled), nb3, nb4 (vintage), nb5 (graph). Defaults to classic2.",
+            "schema": {
+              "type": "string",
+              "default": "classic2"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "description": "Handwriting font size in pixels (default 22).",
+            "schema": {
+              "type": "integer",
+              "default": 22
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful link and document metadata response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "action": {
+                      "type": "string"
+                    },
+                    "studioUrl": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "wordCount": {
+                      "type": "integer"
+                    },
+                    "charCount": {
+                      "type": "integer"
+                    },
+                    "estimatedPages": {
+                      "type": "integer"
+                    },
+                    "parameters": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Handwritten Assignment Document",
+        "description": "Creates an assignment record and returns a direct studio link and export specifications.",
+        "operationId": "createHandwrittenAssignment",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "text"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "default": "Handwritten Assignment"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The text to convert to handwriting"
+                  },
+                  "font": {
+                    "type": "string",
+                    "default": "Cursive_real"
+                  },
+                  "ink": {
+                    "type": "string",
+                    "default": "blue"
+                  },
+                  "paper": {
+                    "type": "string",
+                    "default": "classic2"
+                  },
+                  "fontSize": {
+                    "type": "integer",
+                    "default": 22
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Document created successfully with direct studio URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    },
+                    "studioUrl": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "estimatedPages": {
+                      "type": "integer"
+                    },
+                    "wordCount": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

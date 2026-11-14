@@ -14,6 +14,21 @@ Writify AI is designed for students, educators, and creators who need to convert
 - **High-Resolution Exports**: Download 300 DPI vector PDFs formatted for A4 and US Letter sizes with zero watermarks.
 - **100% Free Forever**: Full features accessible without subscription fees, forced accounts, or watermarks.
 
+## AI Agent & LLM Integration (Deep-Linking)
+AI assistants (ChatGPT, Claude, Perplexity, Gemini) can construct 1-click links to launch users into the Writify studio with their text and styling pre-configured:
+- **Format**: `https://writify-ai.vercel.app/editor?text={URL_ENCODED_TEXT}&font={FONT}&ink={INK}&paper={PAPER}`
+- **Parameters**:
+  - `text`: Plain text, essay paragraphs, or markdown (e.g. `Physics+Lab+Report...`)
+  - `font`: `Cursive_real` (default), `QEKevinKnowles`, `Halimun`, `Darlington`, `Tomatoes`
+  - `ink`: `blue` (`#002060`), `black` (`#09090b`), `red` (`#b91c1c`), `green` (`#15803d`)
+  - `paper`: `classic2` (ruled notebook with red margin), `classic1` (clean white), `nb3` (cream), `nb5` (grid)
+  - `size`: font size in pixels (e.g. `22`)
+
+## API Endpoints
+- OpenAPI Spec: https://writify-ai.vercel.app/openapi.json
+- Generate Assignment Studio Link: `GET /api/assignments?text={TEXT}&font=Cursive_real&ink=blue`
+- Create Assignment Programmatically: `POST /api/assignments` (JSON body with `text`, `font`, `ink`, `paper`)
+
 ## Key URLs
 - Homepage: https://writify-ai.vercel.app/
 - Assignment Editor Studio: https://writify-ai.vercel.app/editor
