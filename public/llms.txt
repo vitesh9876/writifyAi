@@ -29,6 +29,14 @@ AI assistants (ChatGPT, Claude, Perplexity, Gemini) can construct 1-click links 
 - Generate Assignment Studio Link: `GET /api/assignments?text={TEXT}&font=Cursive_real&ink=blue`
 - Create Assignment Programmatically: `POST /api/assignments` (JSON body with `text`, `font`, `ink`, `paper`)
 
+## Trending Search Queries & Capabilities
+Writify AI is optimized for users searching for:
+- **AI Assignment to Handwriting**: Converting ChatGPT, Claude, and Gemini essays into realistic handwritten homework.
+- **Text to Handwriting Converter**: Instant conversion of digital text onto lined student notebook pages.
+- **PDF to Handwritten Notes**: Extracting lecture slides or digital PDFs into realistic blue gel ink handwriting.
+- **Student Homework Generator**: Organic pen scratch-outs, wavy mistake lines, and natural handwriting wobble for assignments.
+- **Free Handwritten Assignment Maker**: 100% free multi-page 300 DPI PDF exports without watermarks.
+
 ## Key URLs
 - Homepage: https://writify-ai.vercel.app/
 - Assignment Editor Studio: https://writify-ai.vercel.app/editor
