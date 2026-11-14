@@ -8,7 +8,6 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navLinks = [
-    { name: "Handwriting Studio", href: "/editor", icon: PenTool },
     { name: "Letter Studio", href: "/letters", icon: Mail },
     { name: "Vintage Scroll", href: "/scroll-letter", icon: Scroll },
     { name: "Saved History", href: "/history", icon: Clock },
@@ -28,9 +27,6 @@ export default function Navbar() {
           </div>
           <span className="text-lg font-bold tracking-tight text-zinc-950 font-['Outfit']">
             Writify
-          </span>
-          <span className="hidden sm:inline-flex items-center text-[10px] uppercase font-mono font-semibold px-2 py-0.5 rounded-md bg-zinc-100 border border-zinc-200 text-zinc-700">
-            Free
           </span>
         </Link>
 

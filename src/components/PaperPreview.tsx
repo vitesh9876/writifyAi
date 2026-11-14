@@ -134,7 +134,9 @@ export default function PaperPreview({
   mistakeStyle = "wavy",
   scannerEffectId,
   shadowEffectId,
+  margins,
   activePage = 1,
+  headerDate,
 }: PaperPreviewProps) {
   // Find selected configurations
   const selectedFont = useMemo(
@@ -154,8 +156,9 @@ export default function PaperPreview({
 
   // Get calibrated notebook writing boundaries
   const boundary = useMemo(() => {
+    if (margins) return margins;
     return NOTEBOOK_BOUNDARIES[paperTemplateId] || NOTEBOOK_BOUNDARIES.classic1;
-  }, [paperTemplateId]);
+  }, [paperTemplateId, margins]);
 
   // Process text through math and auto-mistake engine
   const processedLines = useMemo(() => {
@@ -182,7 +185,7 @@ export default function PaperPreview({
         />
       )}
 
-      {/* Main Paper Sheet Frame (3:4 Photographic Aspect Ratio) */}
+      {/* Main Paper Sheet Frame (3:4 Photographic Aspect Ratio, Authentic Sharp/Micro-Rounded Corner) */}
       <div
         id="handwriting-paper-sheet"
         style={{
@@ -192,12 +195,23 @@ export default function PaperPreview({
           backgroundRepeat: "no-repeat",
           transform: tilt ? `rotate(${tilt}deg)` : undefined,
         }}
-        className={`relative w-full max-w-[640px] aspect-[3/4] rounded-2xl shadow-xl transition-all duration-300 overflow-hidden text-slate-800 ${
+        className={`relative w-full max-w-[640px] aspect-[3/4] rounded-[2px] shadow-xl transition-all duration-300 overflow-hidden text-slate-800 ${
           paperImageUrl ? "bg-white" : "notebook-ruled-page"
         } ${selectedShadow.overlayClass}`}
       >
         {/* Subtle physical paper texture noise */}
         <div className="absolute inset-0 pointer-events-none opacity-15 bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:16px_16px]" />
+
+        {/* Notebook Top Margin Header: Date & Page */}
+        {(headerDate || activePage) && (
+          <div
+            className="absolute top-2.5 right-5 flex items-center gap-3 text-[11px] font-mono opacity-65 pointer-events-none select-none z-10"
+            style={{ color: inkColor }}
+          >
+            {headerDate && <span>Date: {headerDate}</span>}
+            {activePage > 1 && <span>Pg: {activePage}</span>}
+          </div>
+        )}
 
         {/* Calibrated Writing Area Container */}
         <div

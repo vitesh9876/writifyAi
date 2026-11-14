@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Indie+Flower&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kalam:wght@300;400;700&family=Marck+Script&family=Sacramento&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,10 @@
 
 :root {
   --background: #f8fafc;
+  --surface: #ffffff;
   --foreground: #09090b;
+  --muted: #71717a;
+  --border: #e4e4e7;
 }
 
 body {
