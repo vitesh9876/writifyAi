@@ -1,1 +1,0 @@
-import{r as c,j as e}from"./vendor-CvEtNU5T.js";function RedirectComponent(){c.useEffect(()=>{if(typeof window!=="undefined"){window.location.replace("/editor")}},[]);return null}export{RedirectComponent as default};

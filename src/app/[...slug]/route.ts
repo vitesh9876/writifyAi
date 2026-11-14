@@ -43,17 +43,13 @@ const VALID_APP_ROUTES = new Set([
   "terms",
   "about",
   "faq",
-  "pricing",
   "sitemap",
   "languages",
   "templates",
   "examples",
-  "our-users",
-  "users",
   "login",
   "signup",
   "forgot-password",
-  "pro",
   "account",
   "api",
   "assets"
@@ -105,7 +101,6 @@ export async function GET(request: Request) {
   <title>404: Page Not Found | Writify</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/assets/luxury-theme.css">
   <style>
     body { background: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; padding: 24px; text-align: center; color: #09090b; }
     .box { max-width: 440px; background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; padding: 48px 32px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
