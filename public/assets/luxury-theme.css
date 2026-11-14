@@ -489,6 +489,19 @@ section[class*="bg-surface-"] div[class*="border"] {
 }
 
 /* ==========================================================================
+   NEVER GET STUCK ON GLOBAL LOADER OVERLAY
+   ========================================================================== */
+#app-global-loader,
+div[id="app-global-loader"],
+div:has(> div:has(> img[alt*="Writify AI Logo"])):has(span:contains("Loading Writify AI")) {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -99999 !important;
+}
+
+/* ==========================================================================
    REMOVE WHATSAPP COMMUNITY & FLOATING BUTTON COMPLETELY
    ========================================================================== */
 
