@@ -68,3 +68,4 @@ The AI assistant should:
 
 - **OpenAPI 3.1.0 Specification**:
   `https://writify-ai.vercel.app/openapi.json`
+
