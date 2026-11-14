@@ -213,8 +213,8 @@ span[style*="background-color"], span[style*="backgroundColor"] {
 }
 
 /* Plus / Minus Counter Buttons in Editor (- and +) */
-button:has(svg.lucide-minus), button:has(svg.lucide-plus),
-button:has(svg[class*="lucide-minus"]), button:has(svg[class*="lucide-plus"]) {
+div:has(> input[type="range"]) > button,
+button.w-8.h-8, button[class*="w-8"][class*="h-8"]:not([class*="aspect-"]) {
   background: #ffffff !important;
   border: 1px solid #e4e4e7 !important;
   color: #09090b !important;
@@ -229,8 +229,82 @@ button:has(svg[class*="lucide-minus"]), button:has(svg[class*="lucide-plus"]) {
   box-shadow: none !important;
 }
 
-button:has(svg.lucide-minus):hover, button:has(svg.lucide-plus):hover {
+div:has(> input[type="range"]) > button:hover,
+button.w-8.h-8:hover {
   background: #f4f4f5 !important;
+}
+
+/* Notebook Page Template Cards (Full Aspect Ratio & Visibility) */
+.grid.grid-cols-1.sm\:grid-cols-2 > button,
+button.group.relative.flex.flex-col {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 340px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-radius: 16px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background-color: #ffffff !important;
+  border: 2px solid var(--c-border) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+button.group.relative.flex.flex-col:hover {
+  border-color: rgba(9, 9, 11, 0.3) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+button.group.relative.flex.flex-col > div.aspect-\[3\/4\],
+button.group.relative.flex.flex-col div[class*="aspect-"] {
+  width: 100% !important;
+  aspect-ratio: 3 / 4 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #f8fafc !important;
+  position: relative !important;
+}
+
+button.group.relative.flex.flex-col img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+button.group.relative.flex.flex-col > div.p-4,
+button.group.relative.flex.flex-col > div[class*="p-4"] {
+  width: 100% !important;
+  padding: 16px 20px !important;
+  background-color: #ffffff !important;
+  border-top: 1px solid var(--c-border) !important;
+}
+
+/* Editor Top Bar Action Buttons */
+header button[class*="from-blue-"],
+header button[class*="from-indigo-"],
+header button[class*="from-zinc-"],
+header button[class*="shadow-blue-"],
+header button[class*="shadow-indigo-"] {
+  background: #09090b !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid #09090b !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Template Bar Sub-Buttons & Tip Pill */
+button[class*="bg-indigo-50"],
+button[class*="bg-brand-50"],
+div[class*="bg-amber-50"] {
+  background: #ffffff !important;
+  background-image: none !important;
+  border: 1px solid rgba(9, 9, 11, 0.12) !important;
+  color: #09090b !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
 }
 
 /* Pen Type Segmented Controls */
