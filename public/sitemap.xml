@@ -10,13 +10,37 @@
     <loc>https://writify-ai.vercel.app/editor</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://writify-ai.vercel.app/assignment-generator</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://writify-ai.vercel.app/pdf-to-handwriting</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://writify-ai.vercel.app/notebook-generator</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://writify-ai.vercel.app/letters</loc>
     <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://writify-ai.vercel.app/canvas</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://writify-ai.vercel.app/history</loc>
