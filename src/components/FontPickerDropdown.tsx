@@ -66,7 +66,7 @@ export default function FontPickerDropdown({
 
   return (
     <div className="relative w-full" ref={dropdownRef}>
-      {/* 1. Main Button (Matches Handify input style) */}
+      {/* 1. Main Button (Matches Writify input style) */}
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}

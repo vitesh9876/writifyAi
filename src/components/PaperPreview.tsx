@@ -5,7 +5,7 @@ import { PAPER_TEMPLATES, SCANNER_EFFECTS, SHADOW_EFFECTS } from "@/lib/papers";
 import { HANDWRITING_FONTS } from "@/lib/fonts";
 import { processHandwritingText, ProcessedWord } from "@/lib/handwritingEngine";
 
-// Exact boundaries extracted from Handify source code
+// Exact boundaries extracted from Writify source code
 const NOTEBOOK_BOUNDARIES: Record<
   string,
   { top: number; left: number; right: number; bottom: number; lineSpacingPercent: number }

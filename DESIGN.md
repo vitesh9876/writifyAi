@@ -124,3 +124,4 @@ The user interface chrome is strictly governed by exactly four colors:
 - Never introduce fake customer counters, fake review badges, or vague AI buzzwords.
 - Never use em dashes (`—`) or emoji icons.
 - Never show intrusive onboarding popups that block the workspace canvas.
+

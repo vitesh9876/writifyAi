@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log("Seeding Handify database...");
+  console.log("Seeding Writify database...");
 
   // Clean existing records
   await prisma.order.deleteMany();
@@ -16,8 +16,8 @@ async function main() {
   // Create primary demo user
   const demoUser = await prisma.user.create({
     data: {
-      id: "usr_handify_pro_demo",
-      email: "student@handify.in",
+      id: "usr_writify_pro_demo",
+      email: "student@writify-ai.vercel.app",
       displayName: "Alex Rivera",
       role: "user",
       planId: "pass_30d",
@@ -148,7 +148,7 @@ async function main() {
     },
   });
 
-  console.log("Database seeded successfully with realistic Handify records!");
+  console.log("Database seeded successfully with realistic Writify records!");
 }
 
 main()

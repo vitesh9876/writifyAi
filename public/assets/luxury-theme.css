@@ -6,13 +6,11 @@
    3. Primary Ink & CTA: #09090B
    4. Muted Text & Edge: #71717A (and rgba(9, 9, 11, 0.08) border)
 
-   Strict Rules:
-   - ZERO 5th colors (no purples, blues, yellows, or gradients in UI chrome)
-   - ZERO pill buttons (standard 8px rectangular radius)
-   - ZERO fake reviews or fake metrics
-   - ZERO emoji icons
-   - ZERO em dashes
-   - Real functional ink swatches and canvas content preserve true color
+   Impeccable Principles Enforced:
+   - BOLDER: Strong, authoritative visual hierarchy on editor toolbar & action buttons
+   - QUIETER: Subdued, confident community cards & floating CTAs (no neon greens or vibrating gradients)
+   - POLISH: Pixel-perfect circular ink swatches with real colors, clear selected states, zero button collisions
+   - CRITIQUE: Balanced typography, legibility floor >= 11px, high-contrast accessible layout
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -23,7 +21,7 @@
   --c-surface: #ffffff;
   --c-ink: #09090b;
   --c-muted: #71717a;
-  --c-border: rgba(9, 9, 11, 0.1);
+  --c-border: rgba(9, 9, 11, 0.09);
 
   /* Typography */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -86,10 +84,6 @@ p {
   text-wrap: pretty !important;
 }
 
-span, div {
-  color: inherit;
-}
-
 /* Impeccable Legibility Floor: No functional text under 11px */
 button, nav a, .text-\[10px\], .text-\[9\.5px\], .text-\[9px\] {
   font-size: max(11px, 0.7rem) !important;
@@ -138,15 +132,28 @@ header button[class*="bg-transparent"]:hover, header button[class*="border-none"
   background-color: #f4f4f5 !important;
 }
 
+/* Navbar Nav Icons: Neutral Monochrome */
+header nav svg, header nav [class*="text-amber-"], header nav [class*="text-rose-"], header nav [class*="text-cyan-"] {
+  color: #71717a !important;
+}
+
+/* Navbar Avatar Badge: Solid Monochrome */
+header [class*="bg-gradient-to-tr"][class*="from-purple-"] {
+  background: #09090b !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border: 1px solid #18181b !important;
+}
+
 /* Primary Action Buttons: Pure #09090B with #FFFFFF Text */
-.btn-primary,
-button.bg-brand-600, a.bg-brand-600,
-button.bg-brand-700, a.bg-brand-700,
-button.bg-slate-900, a.bg-slate-900,
+.btn-primary:not([style*="background"]),
+button.bg-brand-600:not([style*="background"]), a.bg-brand-600,
+button.bg-brand-700:not([style*="background"]), a.bg-brand-700,
+button.bg-slate-900:not([style*="background"]), a.bg-slate-900,
 header a[href*="editor"].bg-brand-600,
 header a[href*="editor"][class*="inline-flex"],
-button[class*="shadow-brand"],
-button[type="submit"] {
+button[class*="shadow-brand"]:not([style*="background"]),
+button[type="submit"]:not([style*="background"]) {
   background: var(--c-ink) !important;
   background-image: none !important;
   color: var(--c-surface) !important;
@@ -166,50 +173,185 @@ button.bg-slate-900:hover, a.bg-slate-900:hover {
 }
 
 /* Secondary / Bordered Buttons */
-button.border-surface-200, button.border-surface-300,
+button.border-surface-200:not([style*="background"]),
+button.border-surface-300:not([style*="background"]),
 a.border-surface-200, a.border-surface-300,
-button[class*="border-surface-"], a[class*="border-surface-"] {
+button[class*="border-surface-"]:not([style*="background"]),
+a[class*="border-surface-"] {
   background: var(--c-surface) !important;
   border: 1px solid var(--c-border) !important;
   border-radius: var(--radius-btn) !important;
   color: var(--c-ink) !important;
 }
 
-button.border-surface-200:hover, a.border-surface-200:hover {
+button.border-surface-200:hover:not([style*="background"]),
+a.border-surface-200:hover {
   background: #f4f4f5 !important;
   border-color: var(--c-muted) !important;
 }
 
 /* Ghost & Inline Text Buttons */
-button.bg-transparent, a.bg-transparent,
-button[class*="border-none"] {
+button.bg-transparent:not([style*="background"]),
+a.bg-transparent,
+button[class*="border-none"]:not([style*="background"]) {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* INK COLOR PALETTE SWATCHES & BUTTONS (Must NOT be overridden to black!) */
-button:has(div[style*="background"]),
-button:has(div[style*="backgroundColor"]),
-button:has(div[style*="background-color"]) {
+/* ==========================================================================
+   IMPECCABLE BOLDER: EDITOR TOP TOOLBAR & CONTROLS
+   ========================================================================== */
+
+header.min-h-\[48px\], header[class*="min-h-"] {
+  background-color: var(--c-surface) !important;
+  border-bottom: 1px solid var(--c-border) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Prominent Export CTA in Editor */
+header button:has(svg.lucide-download),
+header button[class*="bg-surface-800"],
+header button:has(> svg):has(> span:contains("Export")),
+header div.flex.items-center.gap-2 > button:last-child {
+  background: #09090b !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid #09090b !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  padding: 8px 16px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Editor Secondary Action Buttons ("Add Diagram", "Filters") */
+header button[class*="from-blue-"],
+header button[class*="from-indigo-"],
+header button[class*="from-zinc-"],
+header button[class*="shadow-blue-"],
+header button[class*="shadow-indigo-"] {
+  background: #09090b !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  border: 1px solid #09090b !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  font-weight: 600 !important;
+}
+
+/* Editor Undo/Redo & Utility Icons */
+header div.flex.items-center.gap-1 button {
   background: #ffffff !important;
-  border: 1px solid #e4e4e7 !important;
-  border-radius: var(--radius-btn) !important;
-  color: var(--c-ink) !important;
-  padding: 6px 10px !important;
+  border: 1px solid rgba(9, 9, 11, 0.1) !important;
+  border-radius: 6px !important;
+  color: #3f3f46 !important;
+  transition: all 0.15s ease !important;
+}
+
+header div.flex.items-center.gap-1 button:hover {
+  background: #f4f4f5 !important;
+  color: #09090b !important;
+  border-color: #71717a !important;
+}
+
+/* Template Bar Sub-Buttons & Tip Pill */
+button[class*="bg-indigo-50"],
+button[class*="bg-brand-50"],
+div[class*="bg-amber-50"] {
+  background: #ffffff !important;
+  background-image: none !important;
+  border: 1px solid rgba(9, 9, 11, 0.12) !important;
+  color: #09090b !important;
+  border-radius: 8px !important;
   box-shadow: none !important;
-  min-height: 44px !important;
+  font-weight: 600 !important;
 }
 
-button:has(div[style*="background"]):hover {
+/* ==========================================================================
+   IMPECCABLE POLISH: FUNCTIONAL REAL COLOR INK SWATCHES
+   ========================================================================== */
+
+/* Color swatch buttons in the editor MUST strictly show their real background-color! */
+button[style*="background-color"],
+button[style*="backgroundColor"],
+div.grid.grid-cols-6 button,
+div[class*="grid-cols-6"] button {
+  border-radius: 9999px !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  aspect-ratio: 1 / 1 !important;
+  padding: 0 !important;
+  border: 2px solid rgba(0, 0, 0, 0.15) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+button[style*="background-color"]:hover,
+button[style*="backgroundColor"]:hover {
+  transform: scale(1.1) !important;
+  border-color: rgba(9, 9, 11, 0.5) !important;
+}
+
+/* Selected Active Swatch */
+button[style*="background-color"][class*="scale-110"],
+button[style*="backgroundColor"][class*="scale-110"],
+button[style*="background-color"][class*="ring-2"],
+button[style*="backgroundColor"][class*="ring-2"] {
+  transform: scale(1.12) !important;
   border-color: #09090b !important;
-  background: #fafafa !important;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #09090b !important;
 }
 
-/* Preserve actual ink color inside color swatch circle */
-div[style*="background-color"], div[style*="backgroundColor"],
-span[style*="background-color"], span[style*="backgroundColor"] {
-  border-radius: 50% !important;
+/* Active Swatch Indicator inside button */
+button[style*="background-color"] div.rounded-full {
+  border-radius: 9999px !important;
+}
+
+/* Pen Type Segmented Controls */
+div.grid.grid-cols-3.bg-surface-100 button {
+  background: transparent !important;
+  color: #71717a !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+  padding: 6px 8px !important;
+  font-weight: 600 !important;
+}
+
+div.grid.grid-cols-3.bg-surface-100 button[class*="bg-white"] {
+  background: #ffffff !important;
+  color: #09090b !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Neatness Level Buttons (Pristine, Natural, Casual, Rushed) */
+button[class*="bg-purple-600"],
+button[class*="bg-indigo-600"] {
+  background-color: #09090b !important;
+  color: #ffffff !important;
+  border: 1px solid #09090b !important;
+  font-weight: 700 !important;
+}
+
+/* Sidebar Toggle Switches (Mistake toggle, Fatigue toggle) */
+button[class*="bg-purple-600"][class*="inline-flex"],
+button[class*="bg-amber-600"][class*="inline-flex"],
+button[class*="bg-emerald-600"][class*="inline-flex"] {
+  background-color: #09090b !important;
+}
+
+/* Sliders */
+input[type="range"] {
+  accent-color: var(--c-ink) !important;
+  background: var(--c-border) !important;
+  height: 4px !important;
+  border-radius: 4px !important;
 }
 
 /* Plus / Minus Counter Buttons in Editor (- and +) */
@@ -227,11 +369,41 @@ button.w-8.h-8, button[class*="w-8"][class*="h-8"]:not([class*="aspect-"]) {
   align-items: center !important;
   justify-content: center !important;
   box-shadow: none !important;
+  font-weight: 700 !important;
 }
 
 div:has(> input[type="range"]) > button:hover,
 button.w-8.h-8:hover {
   background: #f4f4f5 !important;
+}
+
+/* Feature category icon containers (Handwriting consistency, Academic realism, Auto mistake) */
+div:has(> svg)[class*="bg-purple-"],
+div:has(> svg)[class*="bg-indigo-"],
+div:has(> svg)[class*="bg-blue-"],
+div:has(> svg)[class*="bg-amber-"],
+div:has(> svg)[class*="bg-emerald-"],
+span:has(> svg)[class*="bg-purple-"],
+span:has(> svg)[class*="bg-indigo-"],
+span:has(> svg)[class*="bg-blue-"],
+span:has(> svg)[class*="bg-amber-"],
+span:has(> svg)[class*="bg-emerald-"] {
+  background-color: #f4f4f5 !important;
+  color: #18181b !important;
+  border: 1px solid #e4e4e7 !important;
+}
+
+div:has(> svg)[class*="bg-purple-"] svg,
+div:has(> svg)[class*="bg-indigo-"] svg,
+div:has(> svg)[class*="bg-blue-"] svg,
+div:has(> svg)[class*="bg-amber-"] svg,
+div:has(> svg)[class*="bg-emerald-"] svg,
+span:has(> svg)[class*="bg-purple-"] svg,
+span:has(> svg)[class*="bg-indigo-"] svg,
+span:has(> svg)[class*="bg-blue-"] svg,
+span:has(> svg)[class*="bg-amber-"] svg,
+span:has(> svg)[class*="bg-emerald-"] svg {
+  color: #18181b !important;
 }
 
 /* Notebook Page Template Cards (Full Aspect Ratio & Visibility) */
@@ -281,48 +453,6 @@ button.group.relative.flex.flex-col > div[class*="p-4"] {
   border-top: 1px solid var(--c-border) !important;
 }
 
-/* Editor Top Bar Action Buttons */
-header button[class*="from-blue-"],
-header button[class*="from-indigo-"],
-header button[class*="from-zinc-"],
-header button[class*="shadow-blue-"],
-header button[class*="shadow-indigo-"] {
-  background: #09090b !important;
-  background-image: none !important;
-  color: #ffffff !important;
-  border-radius: 8px !important;
-  border: 1px solid #09090b !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
-}
-
-/* Template Bar Sub-Buttons & Tip Pill */
-button[class*="bg-indigo-50"],
-button[class*="bg-brand-50"],
-div[class*="bg-amber-50"] {
-  background: #ffffff !important;
-  background-image: none !important;
-  border: 1px solid rgba(9, 9, 11, 0.12) !important;
-  color: #09090b !important;
-  border-radius: 8px !important;
-  box-shadow: none !important;
-}
-
-/* Pen Type Segmented Controls */
-div.grid.grid-cols-3.bg-surface-100 button {
-  background: transparent !important;
-  color: #71717a !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 6px !important;
-  padding: 6px 8px !important;
-}
-
-div.grid.grid-cols-3.bg-surface-100 button[class*="bg-white"] {
-  background: #ffffff !important;
-  color: #09090b !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
-}
-
 /* Hide Pro / Crown Badges - 100% Free */
 span[class*="from-amber-"], span[class*="to-amber-"],
 svg.lucide-crown, [class*="fill-amber-"] {
@@ -337,13 +467,14 @@ span[class*="bg-blue-"], span[class*="bg-brand-50"], span[class*="bg-brand-100"]
   border: 1px solid #e4e4e7 !important;
   border-radius: 6px !important;
   font-weight: 600 !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   box-shadow: none !important;
   background-image: none !important;
 }
 
-/* Strictly NO Pill-Shaped Buttons */
-button.rounded-full, a.rounded-full {
+/* Strictly NO Pill-Shaped Buttons (except circular color swatches) */
+button.rounded-full:not([style*="background"]):not([class*="aspect-square"]),
+a.rounded-full {
   border-radius: var(--radius-btn) !important;
 }
 
@@ -357,35 +488,21 @@ section[class*="bg-surface-"] div[class*="border"] {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
 }
 
-/* WhatsApp Community Section: 4-Color Clean Architecture */
-#whatsapp-community, section:has(#whatsapp-community) {
-  background-color: var(--c-surface) !important;
-  background-image: none !important;
-  border-bottom: 1px solid var(--c-border) !important;
-}
+/* ==========================================================================
+   REMOVE WHATSAPP COMMUNITY & FLOATING BUTTON COMPLETELY
+   ========================================================================== */
 
-#whatsapp-community [class*="bg-emerald-"],
-#whatsapp-community [class*="bg-teal-"] {
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-#whatsapp-community a[href*="whatsapp"],
-#whatsapp-community a[href*="chat.whatsapp"] {
-  background-color: var(--c-ink) !important;
-  color: var(--c-surface) !important;
-  border-radius: var(--radius-btn) !important;
-  border: 1px solid var(--c-ink) !important;
-}
-
-/* Floating WhatsApp Button: Clean Structured 4-Color Button */
-a[href*="whatsapp"].fixed, a[href*="chat.whatsapp"].fixed,
-aside[aria-label="Join WhatsApp Community"] a {
-  background-color: var(--c-ink) !important;
-  color: var(--c-surface) !important;
-  border-radius: var(--radius-btn) !important;
-  border: 1px solid var(--c-ink) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+#whatsapp-community,
+section:has(#whatsapp-community),
+section[id*="whatsapp"],
+aside[aria-label="Join WhatsApp Community"],
+a[href*="whatsapp"].fixed,
+a[href*="chat.whatsapp"].fixed,
+a[href*="whatsapp"],
+a[href*="chat.whatsapp"],
+a[href*="wa.me"],
+[aria-label="Join WhatsApp Community"] {
+  display: none !important;
 }
 
 /* Form Controls & Inputs */
@@ -403,22 +520,9 @@ input:focus, textarea:focus, select:focus {
   outline: none !important;
 }
 
-/* Sliders */
-input[type="range"] {
-  accent-color: var(--c-ink) !important;
-  background: var(--c-border) !important;
-  height: 4px !important;
-  border-radius: 4px !important;
-}
-
 /* Studio Editor Workspace */
 .min-h-screen.flex.flex-col {
   background-color: var(--c-bg) !important;
-}
-
-header.min-h-\[48px\], header[class*="min-h-"] {
-  background-color: var(--c-surface) !important;
-  border-bottom: 1px solid var(--c-border) !important;
 }
 
 aside, div[class*="lg:w-80"], div[class*="lg:w-72"] {
@@ -436,11 +540,16 @@ canvas {
   border-radius: 4px;
 }
 
-/* Footer: Pure #FFFFFF with #71717A Text */
+/* Footer: Pure #FFFFFF with #71717A Text & Collision Guard */
 footer {
   background-color: var(--c-surface) !important;
   border-top: 1px solid var(--c-border) !important;
   color: var(--c-muted) !important;
+}
+
+/* Avoid overlapping the floating chat bubble on bottom right */
+footer div.flex.gap-4, footer div[class*="flex gap-4"] {
+  margin-right: 68px !important;
 }
 
 footer a, footer button,

@@ -90,20 +90,10 @@ export default function Footer() {
             <div className="p-3 rounded-lg bg-zinc-50 border border-zinc-200 space-y-1.5 text-zinc-700 text-[11px]">
               <div>
                 <a
-                  href="https://wa.me/919494006022"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:underline font-medium text-zinc-900"
-                >
-                  WhatsApp: +91 9494006022
-                </a>
-              </div>
-              <div>
-                <a
                   href="mailto:viteshpallapothu07@gmail.com"
                   className="hover:underline font-medium text-zinc-900"
                 >
-                  viteshpallapothu07@gmail.com
+                  Email: viteshpallapothu07@gmail.com
                 </a>
               </div>
               <div>

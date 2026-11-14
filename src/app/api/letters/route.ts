@@ -20,7 +20,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const {
-      userId = "usr_handify_pro_demo",
+      userId = "usr_writify_pro_demo",
       title = "Heartfelt Letter",
       fileName = "handwritten-letter.pdf",
       category = "Love & Romance",
