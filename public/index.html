@@ -72,6 +72,8 @@
           "@id": "https://writify-ai.vercel.app/#application",
           "name": "Writify AI: Realistic Handwritten Assignment Generator",
           "url": "https://writify-ai.vercel.app/",
+          "image": "https://writify-ai.vercel.app/og-image.png",
+          "screenshot": "https://writify-ai.vercel.app/og-image.png",
           "applicationCategory": "EducationalApplication, UtilitiesApplication",
           "operatingSystem": "All (Web Browser, Chrome, Safari, Edge, Firefox, iOS, Android)",
           "browserRequirements": "Requires JavaScript. Requires HTML5.",
@@ -196,7 +198,58 @@
     <link rel="stylesheet" crossorigin href="/assets/index-MaftHc3f.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main style="max-width:1100px;margin:0 auto;padding:40px 20px;font-family:system-ui,-apple-system,sans-serif;">
+        <header style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e2e8f0;padding-bottom:16px;margin-bottom:32px;">
+          <a href="/" style="font-size:24px;font-weight:900;color:#09090b;text-decoration:none;">Writify AI</a>
+          <nav style="display:flex;gap:16px;">
+            <a href="/editor" style="font-weight:600;color:#09090b;text-decoration:none;">Assignment Studio</a>
+            <a href="/letters" style="font-weight:600;color:#64748b;text-decoration:none;">Stationery & Letters</a>
+            <a href="/canvas" style="font-weight:600;color:#64748b;text-decoration:none;">Canvas Studio</a>
+            <a href="/history" style="font-weight:600;color:#64748b;text-decoration:none;">Saved Documents</a>
+          </nav>
+        </header>
+
+        <section style="text-align:center;padding:40px 0;">
+          <div style="display:inline-block;padding:6px 14px;background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;border-radius:9999px;font-size:13px;font-weight:700;margin-bottom:20px;">
+            Realistic Penmanship Engine v2.0 · 100% Free Forever
+          </div>
+          <h1 style="font-size:42px;font-weight:900;color:#09090b;line-height:1.2;margin:0 0 20px 0;letter-spacing:-0.03em;">
+            Turn Typed Text Into Realistic Handwritten Assignments
+          </h1>
+          <p style="font-size:18px;color:#475569;line-height:1.6;max-width:760px;margin:0 auto 32px auto;">
+            Convert typed digital text, essays, and homework notes into authentic human handwriting on ruled notebook paper in seconds.
+            Featuring 120+ authentic handwriting fonts, academic realism controls (ink bleed, natural wobble, and auto-mistakes), and instant 300 DPI multi-page PDF exports with zero watermarks.
+          </p>
+          <div style="display:flex;justify-content:center;gap:16px;">
+            <a href="/editor" style="display:inline-block;padding:14px 28px;background:#09090b;color:#ffffff;border-radius:12px;font-weight:700;text-decoration:none;">
+              Start Writing Now
+            </a>
+            <a href="/letters" style="display:inline-block;padding:14px 28px;background:#f8fafc;color:#1e293b;border:1px solid #cbd5e1;border-radius:12px;font-weight:700;text-decoration:none;">
+              Stationery & Letters
+            </a>
+          </div>
+        </section>
+
+        <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px;">
+          <article style="padding:24px;background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;">
+            <h2 style="font-size:18px;font-weight:800;color:#09090b;margin-bottom:8px;">120+ Authentic Handwriting Styles</h2>
+            <p style="font-size:14px;color:#64748b;line-height:1.5;">Choose from cursive, print, and student scripts across Latin, Devanagari (Hindi), Arabic, and Cyrillic with natural baseline variation.</p>
+          </article>
+          <article style="padding:24px;background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;">
+            <h2 style="font-size:18px;font-weight:800;color:#09090b;margin-bottom:8px;">Academic Auto-Mistake Engine</h2>
+            <p style="font-size:14px;color:#64748b;line-height:1.5;">Simulate believable human imperfections with realistic pen strike-throughs and scratch-outs that look genuinely student-crafted.</p>
+          </article>
+          <article style="padding:24px;background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;">
+            <h2 style="font-size:18px;font-weight:800;color:#09090b;margin-bottom:8px;">Vector 300 DPI PDF Exports</h2>
+            <p style="font-size:14px;color:#64748b;line-height:1.5;">Export crisp, high-resolution multi-page PDFs formatted for standard letter and A4 paper with zero watermarks or subscription fees.</p>
+          </article>
+        </section>
+      </main>
+      <noscript>
+        <p style="text-align:center;padding:20px;color:#64748b;">Please enable JavaScript to access the full interactive Writify AI handwriting studio.</p>
+      </noscript>
+    </div>
   </body>
 </html>
 
